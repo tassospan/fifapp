@@ -2,5 +2,10 @@
     = @project.title
     Project
 %p
+= image_tag @project.image.url(:medium)
 %b Url:
 = link_to @project.url, @project.url, target: "_blank"
+
+%hr
+
+= link_to 'Edit', edit_project_path
