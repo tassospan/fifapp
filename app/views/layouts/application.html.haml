@@ -1,0 +1,15 @@
+!!!
+%html
+  %head
+    %title Fifapp
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+  %body
+    %header
+      %nav.navbar.navbar-default
+        %div.container-fluid
+          %ul.nav.navbar-nav
+            %li= link_to 'Home', root_path
+            %li= link_to 'Add Project', new_project_path 
+    = yield

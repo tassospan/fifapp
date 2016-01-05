@@ -1,8 +1,11 @@
-%h1 Welcome
-
-This is the index page
-
-%hr
-
-- @projects.each do |p|
-    = link_to p.title, p.url, target: "_blank"
+.wrapper
+    .container-fluid
+    
+        %h1 Welcome
+        
+        This is the index page
+        
+        %hr
+        
+        - @projects.each do |p|
+            = link_to p.title, p, class: "btn btn-default"
