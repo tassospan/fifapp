@@ -1,11 +1,11 @@
 .wrapper
     .container-fluid
-    
-        %h1 Welcome
-        
-        This is the index page
-        
-        %hr
-        
-        - @projects.each do |p|
-            = link_to p.title, p, class: "btn btn-default"
+        .row
+            - @projects.each do |p|     
+                .col-sm-6.col-md-4
+                    .thumbnail
+                        = image_tag p.image.url(:medium)
+                        %div.caption
+                            %h3= p.title
+                            = link_to "See More", p, class: "btn btn-default"
+                            
