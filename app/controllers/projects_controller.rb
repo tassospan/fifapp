@@ -1,5 +1,6 @@
 class ProjectsController < ApplicationController
   before_action :find_project, only: [:show, :edit, :update, :destroy]
+  before_action :site_title
 
   def index
     @projects = Project.all.order("created_at DESC")
@@ -45,6 +46,10 @@ class ProjectsController < ApplicationController
   
   def find_project
     @project = Project.find(params[:id])
+  end
+  
+  def site_title
+    @sitetitle = "FiFart Web Enthusiasts"
   end
   
 end
