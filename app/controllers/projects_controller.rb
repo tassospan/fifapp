@@ -33,8 +33,8 @@ class ProjectsController < ApplicationController
   end
   
   def destroy
-    @project.destroy(project_params)
-    redirect_to root_path
+    @project.destroy
+    redirect_to root_path, notice: "Succesfully Deleted"
   end
   
   private
