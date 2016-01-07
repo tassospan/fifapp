@@ -1,6 +1,12 @@
-.wrapper
-    .container-fluid
-        .row
+%div.row
+    %div.col-md-2
+    %div.col-md-8
+        %img.jumbo.img-responsive{src: "./images/front-img.jpg", margin: "auto"  }/
+    %div.col-md-2
+    
+%div.wrapper
+    %div.container-fluid
+        %div.row
             - @projects.each do |p|     
                 .col-sm-6.col-md-4
                     .thumbnail

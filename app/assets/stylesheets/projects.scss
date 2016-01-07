@@ -2,10 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-header {
-    background-color: #fff;
-}
-
 
 .main-navigation {
     background-color: #fff;
@@ -14,4 +10,9 @@ header {
 .jumbo {
     
     padding: 10px;
+}
+
+.navbar-default {
+    
+    background-color: #fff;
 }

@@ -7,16 +7,11 @@
     = csrf_meta_tags
   %body
     %header
-      %nav.navbar.navbar-default
-        %div.container.main-navigation
+      %nav.navbar.navbar-default.main-navigation
+        %div.container-fluid.main-navigation
           = link_to '_fifart.net', root_path, class: "navbar-brand"
           %ul.nav.navbar-nav
             %li= link_to 'Home', root_path
             %li= link_to 'Add Project', new_project_path
     %div.container.main
-      %div.row
-        %div.col-md-2
-        %div.col-md-8
-          %img.jumbo.img-responsive{src: "./images/front-img.jpg", margin: "auto"  }/
-        %div.col-md-2
       = yield
