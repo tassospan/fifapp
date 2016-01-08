@@ -1,7 +1,7 @@
 !!!
 %html
   %head
-    %title= current_page?(root_path) ? @site_title : "#{@site_title} | #{@project.title}"  
+    %title= @site_title
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
@@ -12,6 +12,8 @@
           = link_to '_fifart.net', root_path, class: "navbar-brand"
           %ul.nav.navbar-nav
             %li= link_to 'Home', root_path
+            - Category.all.each do |category|
+              %li= link_to category.name, projects_path(category: category.name)
             %li= link_to 'Add Project', new_project_path
     %div.container.main
       = yield

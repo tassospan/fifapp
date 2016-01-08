@@ -3,7 +3,12 @@ class ProjectsController < ApplicationController
   before_action :site_title
 
   def index
-    @projects = Project.all.order("created_at DESC")
+    if params[:category].blank?
+      @projects = Project.all.order("created_at DESC")
+    else
+      @category_id = Category.find_by(name: params[:category]).id
+      @projects = Project.where(category_id: @category_id).order("created_at DESC")
+    end
   end
   
   def show
@@ -41,7 +46,7 @@ class ProjectsController < ApplicationController
   private
   
   def project_params
-    params.require(:project).permit(:title, :url, :image)
+    params.require(:project).permit(:title, :url, :image, :category_id)
   end
   
   def find_project
