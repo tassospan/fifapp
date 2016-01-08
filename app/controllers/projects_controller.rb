@@ -1,6 +1,8 @@
 class ProjectsController < ApplicationController
+  http_basic_authenticate_with name: "admin", password: "pass", except: [:index, :show]
+  
   before_action :find_project, only: [:show, :edit, :update, :destroy]
-  before_action :site_title, except: [:new] 
+  before_action :site_title
 
   def index
     if params[:category].blank?
@@ -41,6 +43,10 @@ class ProjectsController < ApplicationController
   def destroy
     @project.destroy
     redirect_to root_path, notice: "Succesfully Deleted"
+  end
+  
+  def admin
+    @projects = Project.all
   end
   
   private

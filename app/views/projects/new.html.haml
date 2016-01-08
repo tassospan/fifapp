@@ -6,7 +6,7 @@
                     %li= link_to 'Home', root_path
                     - Category.all.each do |category|
                         %li= link_to category.name, projects_path(category: category.name)
-                    %li= link_to 'Add Project', new_project_path
+                    %li= link_to 'Admin', '/admin'
             %div.col-md-9.main-show
                 %div.row
                     %div.panel.panel-default

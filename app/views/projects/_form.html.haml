@@ -1,6 +1,6 @@
 = simple_form_for @project, html: { multipart: true } do |f|
-    = f.collection_select :category_id, Category.all, :id, :name, { promt: "Choose a Category" }
-    = f.input :image
-    = f.input :title
-    = f.input :url
+    = f.input :image, label: "Choose an Image"
+    = f.collection_select :category_id, Category.all, :id, :name, { promt: "Choose a Category" }, class: "form-control"
+    = f.input :title, label: "Project's Title"
+    = f.input :url, label: "Project's Url"
     = f.button :submit
