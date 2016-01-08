@@ -1,6 +1,6 @@
 class ProjectsController < ApplicationController
   before_action :find_project, only: [:show, :edit, :update, :destroy]
-  before_action :site_title
+  before_action :site_title, except: [:new] 
 
   def index
     if params[:category].blank?
