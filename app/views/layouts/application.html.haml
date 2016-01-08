@@ -1,7 +1,7 @@
 !!!
 %html
   %head
-    %title= current_page?(root_url) ? @sitetitle : @sitetitle +" | "+ @project.title
+    %title= current_page?(root_path) ? @site_title : "#{@site_title} | #{@project.title}"  
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags

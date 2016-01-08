@@ -49,7 +49,7 @@ class ProjectsController < ApplicationController
   end
   
   def site_title
-    @sitetitle = "FiFart Web Enthusiasts"
+    @site_title = "FiFart Web Enthusiasts"
   end
   
 end
