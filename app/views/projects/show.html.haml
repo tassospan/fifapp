@@ -1,15 +1,26 @@
-.wrapper
-    .container-fluid
-        %h1
-            = @project.title
-            Project
-        %p
-        = image_tag @project.image.url(:medium)
-        %br
-        %b Url:
-        = link_to @project.url, @project.url, target: "_blank"
-
-        %hr
-
-        = link_to 'Edit', edit_project_path, class: "btn btn-default"
-        = link_to 'Delete', project_path(@project), method: :delete,data: { confirm: "Are You Sure ?" }, class: "btn btn-warning"
+%div.wrapper
+    %div.container-fluid
+        %div.row
+            %div.col-md-3.side-bar
+                %ul.nav.nav-pills.nav-stacked
+                    %li= link_to 'Home', root_path
+                    - Category.all.each do |category|
+                        %li= link_to category.name, projects_path(category: category.name)
+                    %li= link_to 'Add Project', new_project_path
+            %div.col-md-9.main-show
+                %div.row
+                    %div.panel.panel-default
+                        %div.panel-body.panel-show
+                            %h1
+                                = @project.title
+                                Project
+                    %p
+                    = image_tag @project.image.url(:medium), class: "thumbnail"
+                    %br
+                    %span.badge Url:
+                    = link_to @project.url, @project.url, target: "_blank", class: "btn btn-primary btn-sm"
+            
+                    %hr
+            
+                    = link_to 'Edit', edit_project_path, class: "btn btn-default btn-xs"
+                    = link_to 'Delete', project_path(@project), method: :delete,data: { confirm: "Are You Sure ?" }, class: "btn btn-warning btn-xs"

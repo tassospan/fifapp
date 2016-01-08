@@ -11,9 +11,5 @@
         %div.container-fluid.main-navigation
           = link_to '_fifart.net', root_path, class: "navbar-brand"
           %ul.nav.navbar-nav
-            %li= link_to 'Home', root_path
-            - Category.all.each do |category|
-              %li= link_to category.name, projects_path(category: category.name)
-            %li= link_to 'Add Project', new_project_path
     %div.container.main
       = yield

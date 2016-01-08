@@ -15,3 +15,45 @@
  */
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+
+body {
+    background: #ececec;
+}
+
+.main-navigation {
+    background-color: #220073;
+    border: none;
+}
+
+.navbar-default .navbar-nav > li > a {
+    color: #fff;
+}
+
+.navbar-default .navbar-nav > li > a:hover {
+    color: #b9eaff;
+}
+
+.navbar-default .navbar-brand,
+.navbar-default .navbar-brand:hover {
+    color: #fff;
+}
+
+.side-bar,
+.main-show {
+    background-color: #FFF;
+    border: 1px solid #DDD;
+    border-radius: 4px;
+    transition: border 0.2s ease-in-out 0s;
+    .nav,
+    .row {
+        padding: 5px;
+    }
+}
+
+.panel-show {
+    background-color: #220073;
+    color: #fff;
+}
+
+

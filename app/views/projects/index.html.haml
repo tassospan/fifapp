@@ -1,17 +1,19 @@
-%div.row
-    %div.col-md-2
-    %div.col-md-8
-        %img.jumbo.img-responsive{src: "./images/front-img.jpg", margin: "auto"  }/
-    %div.col-md-2
-    
 %div.wrapper
     %div.container-fluid
         %div.row
-            - @projects.each do |p|     
-                .col-sm-6.col-md-4
-                    .thumbnail
-                        = image_tag p.image.url(:medium)
-                        %div.caption
-                            %h3= p.title
-                            = link_to "See More", p, class: "btn btn-default"
-                            
+            %div.col-md-3.side-bar
+                %ul.nav.nav-pills.nav-stacked
+                    %li= link_to 'Home', root_path
+                    - Category.all.each do |category|
+                        %li= link_to category.name, projects_path(category: category.name)
+                    %li= link_to 'Add Project', new_project_path
+            %div.col-md-9
+                %div.row
+                    - @projects.each do |p|     
+                        .col-sm-6.col-md-4
+                            .thumbnail
+                                = image_tag p.image.url(:medium)
+                                %div.caption
+                                    %h3= p.title
+                                    = link_to "See More", p, class: "btn btn-default"
+                                    
